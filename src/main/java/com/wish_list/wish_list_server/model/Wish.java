@@ -12,10 +12,11 @@ public class Wish {
   private String imgUrl;
   private boolean reserved;
 
-  // Only getters in current version since users should not set item values
   public long getId() { return id; }
   public String getName() { return name; }
   public String getUrl() { return url; }
   public String getImgUrl() { return imgUrl; }
   public boolean isReserved() { return reserved; }
+
+  public void reserve() { this.reserved = true; }
 }
