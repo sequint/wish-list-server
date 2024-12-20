@@ -34,7 +34,7 @@ public class WishService {
   public Wish reserveWish(Long id) {
     Wish wish = getOneWish(id);
 
-    wish.reserve();
+    wish.setReserved(true);
 
     return repository.save(wish);
   }

@@ -16,7 +16,7 @@ public class Wish {
   public String getName() { return name; }
   public String getUrl() { return url; }
   public String getImgUrl() { return imgUrl; }
-  public boolean isReserved() { return reserved; }
+  public boolean getReserved() { return reserved; }
 
-  public void reserve() { this.reserved = true; }
+  public void setReserved(boolean reserved) { this.reserved = reserved; }
 }
