@@ -1,34 +1,33 @@
 package com.wish_list.wish_list_server.controller;
 
-import com.wish_list.wish_list_server.model.Wish;
-import com.wish_list.wish_list_server.repository.WishRepository;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import com.wish_list.wish_list_server.model.Wish;
+import com.wish_list.wish_list_server.service.WishService;
 
 @RestController
 @RequestMapping("/api/wish-list-server")
 public class WishController {
-  private final WishRepository repository;
+  private final WishService service;
 
-  public WishController(WishRepository repository) {
-    this.repository = repository;
+  public WishController(WishService service) {
+    this.service = service;
   }
 
   @GetMapping
   public List<Wish> getAllWishes() {
-    return this.repository.findAll();
+    return service.getAllWishes();
   }
 
   @GetMapping("/{id}")
-  public Optional<Wish> getOneWish(@PathVariable Long id) {
-    return this.repository.findById(id);
+  public Wish getOneWish(@PathVariable Long id) throws RuntimeException {
+    return service.getOneWish(id);
   }
 
   @PostMapping
   public Wish reserveWish(@RequestBody Wish wish) {
-    wish.reserve();
-    return this.repository.save(wish);
+    return reserveWish(wish);
   }
 }
