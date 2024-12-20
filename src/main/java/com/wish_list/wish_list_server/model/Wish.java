@@ -12,6 +12,13 @@ public class Wish {
   private String imgUrl;
   private boolean reserved;
 
+  public Wish(String name, String url, String imgURL) {
+    this.name = name;
+    this.url = url;
+    this.imgUrl = imgURL;
+    this.reserved = false;
+  }
+
   public long getId() { return id; }
   public String getName() { return name; }
   public String getUrl() { return url; }
