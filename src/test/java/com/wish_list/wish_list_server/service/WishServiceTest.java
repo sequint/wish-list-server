@@ -41,6 +41,7 @@ public class WishServiceTest {
     // Assert
     assertEquals(2, wishes.size());
     assertEquals("Cool Book", wishes.get(0).getName());
+    assertEquals(false, wishes.get(0).getReserved());
     verify(wishRepository, times(1)).findAll();
   }
 }
