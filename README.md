@@ -1,3 +1,14 @@
-# Stevens Wish List Server
+# Wish Management Service
 
-Spring Boot Java API for the wish-list application.
+A microservice within the Wish List general application that manages wish list get and update calls.
+
+## Technologies
+
+### Code
+- Java
+- Spring Boot
+
+### Deployment
+- AWS EC2
+- AWS RDS
+- AWS API Gateway
